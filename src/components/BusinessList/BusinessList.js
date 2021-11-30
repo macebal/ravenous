@@ -1,18 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './BusinessList.css';
 import Business from '../Bussiness/Business';
 
 class BusinessList extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <div className="BusinessList">
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business />
-                <Business /> 
+                {this.props.businessess.map((elem, index) =>  <Business business = {elem} key={index}/>)}
             </div>
         );
     }
